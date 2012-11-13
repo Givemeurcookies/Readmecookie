@@ -13,6 +13,11 @@ body {
 q {
 	font-size: 30px;
 }
+a {
+	color:#3194ce;
+	font-weight: 400;
+	text-decoration: none;
+}
 .quote {
 	display:block;
 	margin:10px;
@@ -27,6 +32,12 @@ blockquote:first-letter {
 	line-height: 1;
 	margin: 2px 5px 0 0;
 }
+#menu, #maincontent, #footer {
+	min-width: 1050px;
+}
+#menu ul, .box #profile ul {
+	list-style: none;
+}
 #menu {
 	height:74px;
 	background-color: #333;
@@ -34,7 +45,7 @@ blockquote:first-letter {
 }
 #menu ul{
 	float:right;
-	margin: 50px 7% 0 0;
+	margin: 50px 17% 0 0;
 }
 #menu li{
 	float:left; margin:0 0 0 13px;
@@ -48,7 +59,6 @@ blockquote:first-letter {
 }
 #maincontent{
 	min-height: 100%;
-	min-width: 1050px;
 	width:80%;
 	margin:0 auto;
 }
@@ -56,13 +66,12 @@ blockquote:first-letter {
 	margin:20px 35px 0 35px;
 }
 #left {
-	margin:20px 35px 0 35px;
 	float:left;
 	max-width: 50%;
 	min-width: 550px;
 }
 #right {
-	
+	padding-top: 18px;
 	float:right;
 	width: 30%;
 	min-width: 330px;
@@ -70,24 +79,47 @@ blockquote:first-letter {
 .box {
 	color: #fff;
 	padding: 10px;
-	-webkit-border-radius: 5px;
-    border-radius: 5px;
+	/*-webkit-border-radius: 5px;
+    border-radius: 5px;*/
+    width:320px;
 	background-color: #333;
 }
+.box #profile img {
+	float:right;
+	display: inline;
+	height:155px;
+	width:155px;
+	border-left: 5px solid #3194ce;
+}
+.box #profile ul {
+	float:left;
+	padding-top: 4px;
+	width:155px;
+}
+.box #profile li {
+	margin: 5px 0;
+}
 .grid {
-	margin: 30px auto;
-	width:330px;
+	margin: 30px 0;
+	width:360px;
 }
 .grid li{
 	float: left;
-	height:90px;
-	width:90px;
+	height:100px;
+	width:100px;
 	background-color: #333;
-	-webkit-border-radius: 5px;
-    border-radius: 5px;
-	margin: 10px;
+	/*-webkit-border-radius: 5px;
+    border-radius: 5px;*/
+	margin: 10px 20px 10px 0;
 	color:#fff;
 }
+.grid li:nth-child(3n+3) {  
+ 	margin: 10px 0 10px 0;
+}
+.grid li:nth-child(2n+1) {  
+ 	background-color: #444;
+}
+
 .post{
 	padding: 0 5px 25px 10px;
 	margin-bottom: 10px;
@@ -106,7 +138,8 @@ blockquote:first-letter {
 	padding-top: 10px;
 }
 .post img{
-	margin:10px 0 10px 130px;
+	display: block;
+	margin:25px auto;
 }
 .post:last-child {
 	border-bottom: 0;
@@ -123,10 +156,9 @@ blockquote:first-letter {
 }
 #logo {
 	position: absolute;
-	left:40px;
-	top:6px;
+	left:13%;
+	top:30px;
 }
 #logo img{
-	width:65px;
-	height:65px;
+	max-height:39px;
 }
