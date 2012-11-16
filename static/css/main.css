@@ -9,6 +9,7 @@ body {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	-webkit-font-smoothing: antialiased; 
 	font-size: 15px;
+	z-index: 21;
 }
 q {
 	font-size: 30px;
@@ -17,6 +18,9 @@ a {
 	color:#3194ce;
 	font-weight: 400;
 	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
 }
 .quote {
 	display:block;
@@ -41,11 +45,11 @@ blockquote:first-letter {
 #menu {
 	height:74px;
 	background-color: #333;
-	border-bottom: 5px solid #662285;
+	border-bottom: 5px solid #3194ce;
 }
 #menu ul{
 	float:right;
-	margin: 50px 17% 0 0;
+	margin: 33px 17% 0 0;
 }
 #menu li{
 	float:left; margin:0 0 0 13px;
@@ -53,6 +57,18 @@ blockquote:first-letter {
 #menu li a{
 	color:#fff;
 	text-decoration: none;
+}
+#menu li #hireme {
+	background-color: #555;
+	padding:5px;
+	-webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+#menu li #hireme:hover {
+	text-decoration: none;
+	background-color: orange;
+		-webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 #menu li a:hover{
 	text-decoration: underline;
