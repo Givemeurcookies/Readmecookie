@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+	<head>
+		<title>The blog SAT</title>
+		<!--[if lt IE 9]>    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<meta charset="utf-8">
+		<!-- 
+			Used to refresh the page on my super big display, be jelly.
+			<meta http-equiv="refresh" content="5" />
+		-->
+		<link rel="stylesheet" type="text/css" href="{{staticdomain}}/css/main.css">
+		<link rel="shortcut icon" href="{{staticdomain}}/img/favicon.ico" />
+		<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+		{{svgicons|raw}}
+	</head>
+	<body>
+		<!-- Fallback for FF -->
+			<div id="modallayer">
+				<div id="modalbox">
+				</div>
+			</div>
+			<div id="modalwrapper">
+			<div id="leftcont">
+				<div id="slider"></div>
+				<div id="postcont">
+					<header><img src="{{staticdomain}}/svg/logo.svg"></header>
+	{% for post in posts %}
+					<article class="{{post.category}}">
+						<div class="meta">
+							<span>D{{post.pubDate.day}}</span>
+							<span>M{{post.pubDate.month}}</span>
+							<span>Y{{post.pubDate.year}}</span>
+						</div>
+						<a href="{{post.link}}"><h2>{{post.title}}</h2></a>
+						{{post.article|raw}}
+					</article>
+	{% endfor %}
+				</div>
+			</div>
+			<div id="rightcont">
+				<aside id="rightmenu">
+					<form method="post" id="search" action="search.html">
+						<input type="text" placeholder="search" name="search" id="field"/><button type="submit" class="submit">
+						<div id="submit"><img src=""></div></button>
+					</form>
+					<a href="#">
+						<svg xmlns="http://www.w3.org/2000/svg" aria-label="Github" version="1.1" width="23px" height="23px" viewBox="0 11 22 22">
+							<use xlink:href = "#github"/>
+						</svg>
+					</a>
+					<a href="#">
+						<svg xmlns="http://www.w3.org/2000/svg" aria-label="Login" version="1.1" width="23px" height="23px" viewBox="0 11 22 22">
+							<use xlink:href = "#login"/>
+						</svg>
+					</a>
+					<div id="meta-info">
+						<p>Currently under construction!</p>
+					</div>
+					<div style="clear: both;"></div>
+					<form method="post" id="login" action="contact.html">
+						<div id="name">
+							<label for="username">Username</label><br>
+							<input type="text" placeholder="Username" name="username" id="name" /><br>
+						</div>
+						<div id="pass">
+							<label for="pass">Password</label><br>
+							<input type="password" placeholder="Password" name="pass" id="pass" /><br>
+						</div>
+						<div id="indicator"></div>
+					</form>
+					<div style="clear: both;"></div>
+					<footer>Copyright @ 2013, Bitkraken</footer>
+				</aside>
+			</div>
+			<div class="clean"></div>
+		</div>
+	</body>
+	<script src="{{staticdomain}}/js/spin.min.js"></script>
+	<script type="text/javascript"> 
+	window.onload = function() {
+		var opts = {
+			lines: 7, // The number of lines to draw
+			length: 0, // The length of each line
+			width: 6, // The line thickness
+			radius: 10, // The radius of the inner circle
+			corners: 0.6, // Corner roundness (0..1)
+			rotate: 0, // The rotation offset
+			color: '#fff', // #rgb or #rrggbb
+			speed: 0.9, // Rounds per second
+			trail: 70, // Afterglow percentage
+			shadow: true, // Whether to render a shadow
+			hwaccel: true, // Whether to use hardware acceleration
+			className: 'spinner', // The CSS class to assign to the spinner
+			zIndex: 2e9, // The z-index (defaults to 2000000000)
+			top: 'auto', // Top position relative to parent in px
+			left: 'auto' // Left position relative to parent in px
+		};
+		var target = document.getElementById('indicator');
+		var spinner = new Spinner(opts);
+		//spinner.spin(target);
+	}
+	</script>
+	<script src="{{staticdomain}}/js/spin.min.js"></script>
+	<script type="text/javascript">
+	// Ugly code init
+
+	var tehbody = document.getElementsByTagName("body")[0];
+	var modallayer = document.getElementById("modallayer");
+	var modalbox = document.getElementById("modalbox");
+	//document.getElementById('foo').innerHTML = 'Your content';
+	var images = document.getElementsByTagName("img");
+	var docfrag = document.createDocumentFragment();
+	var theImage = new Image();
+	for (var i = 0; i < images.length; i++) {
+		var imageinquestion = images[i];
+		imageinquestion.addEventListener("click", function(){
+			theImage.src = this.getAttribute("src");
+			var bodysize = getBodySize();
+			// Get accurate measurements from that.
+			var imageWidth = theImage.width;
+			var imageHeight = theImage.height;
+			if (imageWidth > bodysize['width']) {
+				var aspectratio = (imageWidth/imageHeight);
+				imageWidth = bodysize['width']*0.7;
+				imageHeight = imageWidth/aspectratio;
+			}
+			var marginTopBottom = (((bodysize['height']-imageHeight)/2)-20);
+			modalbox.style.height = imageHeight+'px';
+			modalbox.style.width  = imageWidth+'px';
+			modalbox.style.margin = marginTopBottom+"px auto";
+
+			modalbox.appendChild(theImage);
+			addClass(tehbody, "dialogue");
+		}, false); 
+	}
+	modallayer.addEventListener("click", function(){
+		removeClass(tehbody, "dialogue");
+		setTimeout(function(){modalbox.removeChild(theImage);},500);
+	}, false);
+	function addClass(element, classToAdd) {
+		element.className += " "+classToAdd;
+	}
+	function removeClass(element, classToRemove) {
+		element.className = element.className.replace( /\bdialogue\b/ , '')
+	}
+	function getBodySize(){
+		var myWidth = 0, myHeight = 0;
+		if( typeof( window.innerWidth ) == 'number' ) {
+			//Non-IE
+			myWidth = window.innerWidth;
+			myHeight = window.innerHeight;
+		} else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+			//IE 6+ in 'standards compliant mode'
+			myWidth = document.documentElement.clientWidth;
+			myHeight = document.documentElement.clientHeight;
+		} else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+ 			//IE 4 compatible
+			myWidth = document.body.clientWidth;
+			myHeight = document.body.clientHeight;
+		}
+		return {"width":myWidth, "height":myHeight};
+	}
+	</script>
+</html>
+
+
+
+
+
