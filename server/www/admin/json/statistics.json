@@ -1,0 +1,102 @@
+[{
+	"type" : "div",
+	"class": "statistics",
+	"children" : [
+		{
+			"type"     : "div",
+			"children" : [
+				{
+					"type"  : "span",
+					"class" : "icon icon-stats"
+				},
+				{
+					"type"  : "h2",
+					"class" : "icon",
+					"text"  : "Views"
+				},
+				{
+					"type"  : "span",
+					"class" : "clear"
+				}
+			]
+		},
+		{
+			"type" : "hr"
+		},
+		{
+			"type"     : "p",
+			"class"    : "pageviews-now",
+			"children" : [
+				{
+					"type"  : "p",
+					"text" : "Right now"
+				},
+				{
+					"type"  : "p",
+					"class" : "views",
+					"text"  : "0"
+				},
+				{
+					"type"  : "p",
+					"text"  : "active visitors on posts"
+				}
+			]
+		},
+		{
+			"type"      : "div",
+			"class"     : "pageviews-chart",
+			"children"  : [
+				{
+					"type"  :  "p",
+					"text"  :  "Some time ago"
+				},
+				{
+					"type"  :  "div"
+				}
+			]
+		},
+		{
+			"type"     : "div",
+			"children" : [
+				{
+					"type"  : "span",
+					"class" : "icon icon-revenue"
+				},
+				{
+					"type"  : "h2",
+					"class" : "icon",
+					"text"  : "Revenue"
+				},
+				{
+					"type"  : "span",
+					"class" : "clear"
+				}
+			]
+		},
+		{
+			"type" : "hr"
+		},
+		{
+			"type" : "div",
+			"class" : "revenue-container",
+			"children" : [
+				{
+					"type" : "div",
+					"class" : "today"
+				},
+				{
+					"type" : "div",
+					"class" : "yesterday"
+				},
+				{
+					"type" : "div",
+					"class" : "month"
+				},
+				{
+					"type" : "div",
+					"class" : "last-month"
+				}
+			]
+		}
+	]
+}]

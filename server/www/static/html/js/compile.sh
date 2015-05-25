@@ -1,0 +1,1 @@
+uglifyjs communicator.js structure.js editor.js pagemanager.js animations.js initialiser.js --source-map compressed.js.map --output compressed.js --screw-ie8

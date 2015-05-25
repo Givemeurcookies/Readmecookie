@@ -1,0 +1,14 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+.upload {
+	background: gray;
+	color:white;
+	font-size: 30px;
+	font-family: arial;
+	cursor: pointer;
+	padding:10px;
+	margin: 0;
+	display: inline-block;
+}

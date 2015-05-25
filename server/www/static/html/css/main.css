@@ -1,0 +1,109 @@
+/*
+** Written by Jon Brede Skaug
+*/
+
+/* 
+*  Table of contents
+**
+*  1) Page structure
+**
+*  2) 
+**
+*/
+/*
+** Relevant to page structure
+*/
+
+.post h1,.post h2{
+	font-family: 'Noto Sans', sans-serif;
+	color: #ccc;
+	-webkit-transition: background 150ms ease;
+	-moz-transition: background 150ms ease;
+    -ms-transition: background 150ms ease;
+    -o-transition: background 150ms ease;
+	transition: background 150ms ease;
+}
+.post h1 a:hover, .post h2:hover {
+	background-color: #333;
+}
+.post h2 {
+	padding: 20px;
+}
+.post a{
+	text-decoration: none;
+	font-weight: 600;
+	color: #04ACEC;
+}
+.post p, q{
+	color: #ccc;
+	padding:0 0 20px 0;
+	line-height: 20px;
+	font-weight: 300;
+}
+.post q {
+	font-size: 18px;
+	font-style: italic;
+}
+.post blockquote {
+	padding: 20px 0 20px 0;
+	overflow: hidden; /* clearfix alternative */
+	font-size: 18px;
+	line-height: 150%;
+	color: #454545;
+}
+.post blockquote:before {
+	font-family: arial;
+	display: block;
+	float: left;
+	margin: 10px 15px 0 0;
+	font-size: 100px;
+	content: open-quote;
+	color: #bababa;
+}
+.post blockquote:after {
+	content: none;
+}
+.post blockquote cite {
+	float:right;
+	font-size: 15px;
+	display: block;
+	color:black;
+}
+.post{
+	margin: 0 0 40px 0;
+	width:100%;
+	background-color: #1b1c18;
+	padding: 0;
+}
+.post .meta{
+	position:absolute;
+	color:#fe9c34;
+	margin-left:-100px;
+	width:75px;
+	text-align: center;
+}
+.post.media {
+	padding: 0;
+}
+.post p, .post h2{
+	padding: 20px;
+	min-height: 20px;
+	margin: 0;
+}
+.post h2  { border-left:10px solid #7c7a66 } /* Gray */
+.post .code h2    { border-left:10px solid #fc2d74 } /* Pink */
+.post .update h2  { border-left:10px solid #a9e840 } /* Green */
+.post .media h2   { border-left:10px solid #5ec5e5 } /* Blue */
+.post .article h2 { border-left:10px solid #af8aff } /* Violet */
+.post .media iframe, img {
+	padding:0;
+	margin:0 auto;
+	display: block;
+	width:100%;
+}
+.post .content {
+	min-height: 150px;
+}
+.clean {
+	clear:both;
+}

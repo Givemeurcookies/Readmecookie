@@ -1,0 +1,77 @@
+body {
+	margin: 0; padding: 0;
+	background: #333;
+}
+form {
+	position: absolute;
+	height:100px;
+	width:200px;
+	top:50%;
+	right:50%;
+	margin: -75px -90px 0 0;
+}
+form input {
+	background: #fff;
+	width: 131px;
+	padding: 10px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	outline: none;
+	float: right;
+	border: 0;
+	border-right: solid 9px #fff; 
+	display: inline;
+	font-size: 1.25em;
+}
+form input::-webkit-input-placeholder { text-transform: uppercase; }
+form input::-moz-placeholder { text-transform: uppercase; } /* firefox 19+ */
+form input:-ms-input-placeholder { text-transform: uppercase; } /* ie */
+form input:-moz-placeholder { text-transform: uppercase; }
+form input.success {
+	border-right:solid 9px lime;
+}
+form input.error {
+	border-right:solid 9px red;
+}
+form span {
+	float: right;
+	color:white;
+	margin: 8px 0 0 0;
+	font-size: 2.25em;
+}
+form .icon-user{
+	font-size: 2.05em;
+	padding-right:5px;
+}
+form .errorMsg {
+	opacity: 0;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	background: red;
+	font-family: arial;
+	text-transform: uppercase;
+	position: absolute;
+	width:100px;
+	right:-125px;
+	color:#fff;
+	padding: 10px 10px;
+	margin: 2px 0;
+	font-size: 1.25em;
+	text-align: left;
+}
+form .show {
+	opacity: 1;
+	
+	-webkit-transition: opacity 150ms ease;
+	-moz-transition: opacity 150ms ease;
+	-ms-transition: opacity 150ms ease;
+	-o-transition: opacity 150ms ease;
+	transition: opacity 150ms ease;
+}
+form .container {
+	position: relative;
+	height: 50px;
+}
+.clear {
+	clear:both;
+}

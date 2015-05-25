@@ -1,0 +1,35 @@
+body {
+	margin: 0; padding: 0;
+	background: #333;
+}
+form {
+	position: absolute;
+	height:100px;
+	width:200px;
+	top:50%;
+	right:50%;
+	margin: -100px -90px 0 0;
+}
+form input {
+	width: 131px;
+	padding: 10px;
+	outline: none;
+	float: right;
+	border: 0;
+	border-right: solid 9px orange; 
+	display: inline;
+	font-size: 1.25em;
+}
+form input.error {
+	border-right:solid 9px red;
+}
+form span {
+	float: right;
+	color:white;
+	margin: 8px 0 0 0;
+	font-size: 2.25em;
+}
+form .icon-user{
+	font-size: 2.05em;
+	padding-right:5px;
+}

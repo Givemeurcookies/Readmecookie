@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login - Readmecookie</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/static/fonts/fonts.css">
+</head>
+<body>
+	<form>
+		<!-- Due to float, those items are from right to left -->
+		<div class="container">
+			<div class="errorMsg">Empty!</div>
+			<input id="username" placeholder="Username" class="success">
+			<span class="icon icon-user"></span>
+			<span class="clear"></span>
+		</div>
+		<!-- Down one level -->
+		<div class="container">
+			<div class="errorMsg">Wrong!</div>
+			<input id="password" type="password" placeholder="Password">
+			<span class="icon icon-password"></span>
+			<span class="clear"></span>
+		</div>
+	</form>
+</body>
+</html>
+<!-- This should be put into it's own folder and be synced -->
+<script type="text/javascript">
+	// Since I am lazy, tada! Super quick sketch that will work! (and never changed)
+	document.getElementsByTagName('form')[0].addEventListener('keypress', function (e) {
+		var key = e.which || e.keyCode;
+		var loginObj = {
+			user : document.getElementById('username'),
+			pass : document.getElementById('password')
+		};
+		if (key == 13) { // 13 is enter
+
+			if (loginObj.user.value != '' && loginObj.pass.value != ''){
+				login({user:loginObj.user.value,pass:loginObj.pass.value}, function(){
+					returnedObj = JSON.parse(this.responseText);
+					if (returnedObj.status == 1) {
+						sessionStorage.setItem('token', returnedObj.token);
+						window.location.href = 'admin.html';
+					} else {
+						console.log(returnedObj);
+					}
+				});
+
+			}
+		}
+	});
+	var containerEl = document.getElementsByClassName('container');
+	for(var i = 0, l = containerEl.length; i < l; i++){
+		containerEl[i].addEventListener('keydown', inputFunc);
+	}
+	function inputFunc() {
+		// setTimeout causes global scope 
+		// therefore we store 'this' in a var
+		// We assume there is only one element
+		var that     = this,
+			callback = function(){
+				console.log(that);
+				if (that.getElementsByTagName('input')[0].value == '') {
+					that.getElementsByClassName('errorMsg')[0].className = 'errorMsg show';
+				} else {
+					that.getElementsByClassName('errorMsg')[0].className = 'errorMsg';
+				}
+			};
+		window.setTimeout(callback, 10);
+	}
+	function login(obj, callback){
+		var oReq = new XMLHttpRequest();
+		oReq.addEventListener('progress', null, false);
+		//oReq.responseType = "arraybuffer";
+
+		console.log(JSON.stringify(obj));
+
+		oReq.onload = callback;
+		oReq.open('POST', 'https://api.readmecookie.com/auth/login', true);
+		oReq.send(JSON.stringify(obj));
+	}
+	function validateToken(obj, callback){
+		var oReq = new XMLHttpRequest();
+		oReq.addEventListener('progress', null, false);
+
+		oReq.onload = callback;
+		oReq.open('POST', 'https://api.readmecookie.com/auth/validateToken', true);
+		oReq.send(JSON.stringify(obj))
+	}
+</script>

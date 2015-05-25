@@ -1,0 +1,122 @@
+<html>
+<head>
+	<link rel="stylesheet" href="main.css">
+	<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<nav class="sidebar">
+		<div class="keeper">
+		<ul class="">
+			<li>
+				<div><img type="image/svg+xml" src="icons.svg#home"></div>
+				<div><a href="#"></a></div>
+				<span class="clear"></span>
+			</li>
+		</ul>
+		</div>
+		<div class="keeper">
+			<ul class="">
+				<li>
+					<div><object type="image/svg+xml" data="icons.svg#home"></object></div>
+					<div><a href="#">Home</a></div>
+					<span class="clear"></span>
+				</li>
+			</ul>
+		</div>
+		<div class="keeper">
+			<ul class="">
+				<li>
+					<div><object type="image/svg+xml" data="icons.svg#home"></object></div>
+					<div><a href="#">Home</a></div>
+					<span class="clear"></span>
+				</li>
+			</ul>
+		</div>
+		<div class="keeper">
+			<ul class="">
+				<li>
+					<div><object type="image/svg+xml" data="icons.svg#home"></object></div>
+					<div><a href="#">Home</a></div>
+					<span class="clear"></span>
+				</li>
+			</ul>
+		</div>
+		<div class="keeper">
+			<ul class="">
+				<li>
+					<div><object type="image/svg+xml" data="icons.svg#home"></object></div>
+					<div><a href="#">Home</a></div>
+					<span class="clear"></span>
+				</li>
+			</ul>
+		</div>
+		<div class="keeper">
+			<ul class="">
+				<li>
+					<div><object type="image/svg+xml" data="icons.svg#home"></object></div>
+					<div><a href="#">Home</a></div>
+					<span class="clear"></span>
+				</li>
+			</ul>
+		</div>
+		<div class="keeper">
+			<ul class="">
+				<li>
+					<div><object type="image/svg+xml" data="icons.svg#home"></object></div>
+					<div><a href="#">Home</a></div>
+					<span class="clear"></span>
+				</li>
+			</ul>
+		</div>
+		<div class="keeper">
+			<ul class="">
+				<li>
+					<div><object type="image/svg+xml" data="icons.svg#home"></object></div>
+					<div><a href="#">Home</a></div>
+					<span class="clear"></span>
+				</li>
+			</ul>
+		</div>
+		<div class="keeper">
+			<ul class="">
+				<li>
+					<div><object type="image/svg+xml" data="icons.svg#home"></object></div>
+					<div><a href="#">Home</a></div>
+					<span class="clear"></span>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</body>
+</html>
+<script>
+// Attach eventlistener
+var firstButton = document.getElementsByClassName('sidebar')[0].
+		getElementsByTagName('ul')[0].
+		getElementsByTagName('li')[0].
+		getElementsByTagName('div')[0];
+
+firstButton.addEventListener('click', function(){
+
+	var uls = document.getElementsByClassName('sidebar')[0].getElementsByTagName('ul'),
+		i   = 0;
+
+	var interval = setInterval(function(){
+		uls[i].classList.toggle('expanded');
+		i += 1;
+		if(i >= uls.length)
+			clearInterval(interval);
+	}, 80);
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+

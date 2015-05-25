@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title> Control panel on Readmecookie</title>
+	<script type="text/javascript">
+		if(sessionStorage.getItem("token") === null) {
+			document.location.href = 'login.html';
+		}
+	</script>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/css/compiled.css">
+	<link rel="stylesheet" type="text/css" href="/static/fonts/fonts.css">
+	<link rel="shortcut icon" href="/static/img/favicon.ico"/>
+</head>
+<body>
+	<!-- This div is only used to as a modal -->
+	<div class="overlay">
+		<div class="horizontal">
+			Welcome <b>Mr.Gemeco</b> <a class="logout" href="#">» Logout</a>
+		</div>
+		<div class="horizontalflow">This isn't here</div>
+		<!-- Vertical menu -->
+		<nav class="sidebar">
+			<ul>
+				<li>
+					<a href="#archive">
+						<span class="icon-archive icon"></span>
+						<p>Archive</p>
+					</a>
+					<ul>
+						<li>
+							<a href="#newfile">
+								<span class="icon icon-newfile"></span>
+								<p>New post</p>
+							</a>
+						</li>
+						<li>
+							<a href="#tags">
+								<span class="icon icon-point"></span>
+								<p>Tags</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#comments">
+						<span class="icon-comments icon"></span>
+						<p>View all comments</p>
+					</a>
+				</li>
+				<li>
+					<a href="#statistics">
+						<span class="icon-barchart icon"></span>
+						<p>Statistics</p>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="main">
+			<!--<div class="panel"></div>-->
+			<div class="posts">
+			<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			<div class="add">
+				<img src="img/plus.svg" alt="" height="75" width="90">
+			</div>
+		
+		</div>
+		<div class="page-status ">Loading statistics</div>
+		<div class="control">
+			<div class="publish">Publish</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="prompt">
+		<div class="container">
+			<div class="question"></div>
+			<div class="yes">Confirm</div>
+			<div class="no">REGRET!</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="/static/js/libs/d3.min.js"></script>
+<script src="/static/js/libs/rickshaw.min.js"></script>
+<script src="/static/js/compressed.js"></script>

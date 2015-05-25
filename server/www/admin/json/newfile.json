@@ -1,0 +1,23 @@
+[{
+	"type":"div",
+	"children":[
+		{
+			"type" : "div",
+			"class": "posts",
+			"children" : [{
+				"type" : "div",
+				"class": "clear"
+			}]
+		},{
+			"type" : "div",
+			"class": "add",
+			"children" : [{
+				"type" : "img",
+				"src"  : "img/plus.svg",
+				"height": 75,
+				"width" : 90
+			}]
+
+		}
+	]
+}]
